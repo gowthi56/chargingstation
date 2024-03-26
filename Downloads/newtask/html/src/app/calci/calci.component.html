@@ -1,0 +1,22 @@
+<div class="calculator">
+    <input type="text" [(ngModel)]="display" class="display-input" disabled>
+    <input type="text" value="{{result}}" class="result-input" placeholder="&#8592;">
+    <div class="buttons">
+        <button class="calculator-button" (click)="appendToDisplay('1')">1</button>
+        <button class="calculator-button" (click)="appendToDisplay('2')">2</button>
+        <button class="calculator-button" (click)="appendToDisplay('3')">3</button>
+        <button class="calculator-button" (click)="appendToDisplay('/')">/</button>
+        <button class="calculator-button" (click)="appendToDisplay('4')">4</button>
+        <button class="calculator-button" (click)="appendToDisplay('5')">5</button>
+        <button class="calculator-button" (click)="appendToDisplay('6')">6</button>
+        <button class="calculator-button" (click)="appendToDisplay('*')">x</button>
+        <button class="calculator-button" (click)="appendToDisplay('7')">7</button>
+        <button class="calculator-button" (click)="appendToDisplay('8')">8</button>
+        <button class="calculator-button" (click)="appendToDisplay('9')">9</button>
+        <button class="calculator-button" (click)="appendToDisplay('-')">-</button>
+        <button class="calculator-button" (click)="appendToDisplay('0')">0</button>
+        <button class="calculator-button" (click)="appendToDisplay('.')">.</button>
+        <button class="calculator-buttons" (click)="calculateResult()">=</button>
+        <button class="calculator-button" (click)="appendToDisplay('+')">+</button>
+    </div>
+</div>

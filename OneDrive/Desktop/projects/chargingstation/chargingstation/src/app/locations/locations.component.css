@@ -1,0 +1,12 @@
+.error-message {
+    color: red;
+    font-size: 12px;
+  }
+  #map {
+    height: 900px; /* Set a fixed height */
+    width: 100%;
+  }
+  .card
+  {
+    border: none;
+  }

@@ -1,0 +1,50 @@
+<app-charge></app-charge>
+<div class="bg-blue-100 p-4">
+    <form [formGroup]="locationForm" (ngSubmit)="onSubmit()"class="ps-[300px]">
+          <label for="country"class="pe-2">Enter Country:</label>
+          <input type="text" id="country"formControlName="country" class="px-2"> 
+          <label for="city" class="ps-[100px] pe-2">Enter City:</label>
+          <input type="text" id="city" formControlName="city"class="px-2">
+          <button type="submit"class="ms-[100px] bg-blue-300 p-2 rounded">Submit</button>
+          <div *ngIf="submitted && locationForm.get('country')?.invalid" class="error-message ms-[110px] w-[200px] relative">
+         Country is required
+          </div>
+          <div *ngIf="submitted && locationForm.get('city')?.invalid" class="error-message absolute w-[200px] left-[810px] bottom-[550px]">
+            City is required
+          </div>
+      </form>
+</div>
+<div id="map" class="leaflet-map"></div>
+<div class="container pt-4 bg-blue-100">
+    <div class="row">
+      <div class="col-md-3 mb-4" *ngFor="let location of locationData; index as i">
+        <div class="card bg-blue-200">
+          <div class="flex">
+            <h1 class="p-2 font-semibold">{{ i + 1 }}.</h1>
+            <h1 class="ps-[10px] py-2 font-semibold">{{ location.name || 'NA' }}</h1>
+          </div>
+          <div class="ms-[25px] pb-2">
+            <span style="padding-right: 10px;"class="font-semibold">Rating:</span>
+            <span>{{location.rating || 'NA' }}</span>
+          </div>
+          <div class="flex">
+            <h1 class="ms-[25px]"><span class="font-semibold ps-[10px]">Capacity:</span>{{ location?.connectors[0]?.kw || 'NA' }}</h1>
+            <h1 class="ms-[20px]">{{ location?.connectors[0]?.speed || 'NA' }}</h1>
+          </div>
+          <div class="ms-[25px] pb-2">
+            <span style="padding-right: 10px;"class="font-semibold">Address:</span>
+            <span>{{ location.formatted_address || 'NA' }}</span>
+          </div>
+          <div class="ms-[25px] pb-2">
+            <span style="padding-right: 10px;"class="font-semibold">Contact Number:</span>
+            <span>{{ location.phone_number || 'NA' }}</span>
+          </div>
+          <div class="ms-[25px] pb-2">
+            <span style="padding-right: 10px;"class="font-semibold">Website:</span>
+            <span>{{location.website || 'NA'  }}</span>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+

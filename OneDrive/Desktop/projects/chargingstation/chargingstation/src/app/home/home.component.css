@@ -1,0 +1,14 @@
+#map {
+    height: 400px; /* Set a fixed height */
+    width: 100%;
+  }
+  .card
+  {
+    border: none;
+  }
+  .underline {
+    width: 1300px; 
+    height: 1px; 
+    background-color: black; 
+    margin-left: 100px;
+  }
